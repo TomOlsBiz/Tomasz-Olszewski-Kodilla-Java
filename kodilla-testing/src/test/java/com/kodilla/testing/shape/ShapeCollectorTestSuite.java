@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public class ShapeCollectorTestSuite {
     private static int testCounter = 0;
+    private ShapeCollector shapeCollector;
 
     @BeforeClass
     public static void beforeAllTests() {
@@ -18,6 +19,7 @@ public class ShapeCollectorTestSuite {
 
     @Before
     public void beforeEveryTest() {
+        shapeCollector = new ShapeCollector();
         testCounter++;
         System.out.println("Preparing to execute test #" + testCounter + ".");
     }
@@ -30,7 +32,6 @@ public class ShapeCollectorTestSuite {
     @Test
     public void testAddFigureCircle() {
         //Given
-        ShapeCollector shapeCollector = new ShapeCollector();
 
         //When
         Circle circle = new Circle(15);
@@ -39,13 +40,12 @@ public class ShapeCollectorTestSuite {
         //Then
         Assert.assertEquals(1, shapeCollector.shapeList.size());
         Assert.assertEquals("circle", shapeCollector.getFigure(0).getShapeName());
-        Assert.assertEquals(Math.PI*Math.pow(15,2), shapeCollector.getFigure(0).getField(),0.01);
+        Assert.assertEquals(706.86, shapeCollector.getFigure(0).getField(),0.01);
     }
 
     @Test
     public void testAddFigureTriangle() {
         //Given
-        ShapeCollector shapeCollector = new ShapeCollector();
 
         //When
         Triangle triangle = new Triangle(10,4);
@@ -54,13 +54,12 @@ public class ShapeCollectorTestSuite {
         //Then
         Assert.assertEquals(1, shapeCollector.shapeList.size());
         Assert.assertEquals("triangle", shapeCollector.getFigure(0).getShapeName());
-        Assert.assertEquals(0.5*10*4, shapeCollector.getFigure(0).getField(),0.01);
+        Assert.assertEquals(20, shapeCollector.getFigure(0).getField(),0.01);
     }
 
     @Test
     public void testAddFigureSquare() {
         //Given
-        ShapeCollector shapeCollector = new ShapeCollector();
 
         //When
         Square square = new Square(7);
@@ -69,13 +68,12 @@ public class ShapeCollectorTestSuite {
         //Then
         Assert.assertEquals(1, shapeCollector.shapeList.size());
         Assert.assertEquals("square", shapeCollector.getFigure(0).getShapeName());
-        Assert.assertEquals(Math.pow(7,2), shapeCollector.getFigure(0).getField(),0.01);
+        Assert.assertEquals(49, shapeCollector.getFigure(0).getField(),0.01);
     }
 
     @Test
     public void testShowFigures() {
         //Given
-        ShapeCollector shapeCollector = new ShapeCollector();
 
         //When
         Circle circle = new Circle(12);
@@ -96,7 +94,6 @@ public class ShapeCollectorTestSuite {
     @Test
     public void testRemoveFigure() {
         //Given
-        ShapeCollector shapeCollector = new ShapeCollector();
 
         //When
         Circle circle = new Circle(10);
@@ -112,7 +109,6 @@ public class ShapeCollectorTestSuite {
     @Test
     public void testTryToRemoveFigureNotExistingInCollection() {
         //Given
-        ShapeCollector shapeCollector = new ShapeCollector();
 
         //When
         Circle circle = new Circle(5);
@@ -125,7 +121,6 @@ public class ShapeCollectorTestSuite {
     @Test
     public void testGetFigure() {
         //Given
-        ShapeCollector shapeCollector = new ShapeCollector();
 
         //When
         Square square = new Square(8);
