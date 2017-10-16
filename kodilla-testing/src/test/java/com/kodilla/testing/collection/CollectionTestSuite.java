@@ -38,16 +38,15 @@ public class CollectionTestSuite {
         ArrayList<Integer> testNumbersList = new ArrayList<>();
 
         //When
-        ArrayList<Integer> evenNumbersGenerated = tester.exterminate(testNumbersList);
+        List<Integer> evenNumbersGenerated = tester.exterminate(testNumbersList);
 
         //Then
         ArrayList<Integer> expectedNumbersList = new ArrayList<>();
-        System.out.println("Expected:" + expectedNumbersList);
-        System.out.println("Generated:" + evenNumbersGenerated);
-        System.out.println("Number of expected numbers:" + expectedNumbersList.size());
-        System.out.println("Number of generated numbers:" + evenNumbersGenerated.size());
-
-        //alternative solution: Assert.assertTrue(evenNumbersGenerated.isEmpty());
+        //System.out.println("Expected:" + expectedNumbersList);
+        //System.out.println("Generated:" + evenNumbersGenerated);
+        //System.out.println("Number of expected numbers:" + expectedNumbersList.size());
+        //System.out.println("Number of generated numbers:" + evenNumbersGenerated.size());
+        Assert.assertTrue(evenNumbersGenerated.isEmpty());
     }
 
 
@@ -61,16 +60,16 @@ public class CollectionTestSuite {
         Collections.addAll(testNumbersList, testNumbers);
 
         //When
-        ArrayList<Integer> evenNumbersGenerated = tester.exterminate(testNumbersList);
+        List<Integer> evenNumbersGenerated = tester.exterminate(testNumbersList);
 
         //Then
         ArrayList<Integer> expectedNumbersList = new ArrayList<>();
         Integer[] expectedNumbers = {2,4};
         Collections.addAll(expectedNumbersList, expectedNumbers );
         Assert.assertEquals(expectedNumbersList, evenNumbersGenerated);
-        System.out.println("Expected:" + expectedNumbersList);
-        System.out.println("Generated:" + evenNumbersGenerated);
-        System.out.println("Number of expected numbers:" + expectedNumbersList.size());
-        System.out.println("Number of generated numbers:" + evenNumbersGenerated.size());
+        //System.out.println("Expected:" + expectedNumbersList);
+        //System.out.println("Generated:" + evenNumbersGenerated);
+        //System.out.println("Number of expected numbers:" + expectedNumbersList.size());
+        //System.out.println("Number of generated numbers:" + evenNumbersGenerated.size());
     }
 }
