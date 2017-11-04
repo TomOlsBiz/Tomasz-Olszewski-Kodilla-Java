@@ -35,5 +35,6 @@ class MovieStore {
                 .collect(Collectors.joining("!"));
 
         System.out.println(titles);
+
     }
 }
