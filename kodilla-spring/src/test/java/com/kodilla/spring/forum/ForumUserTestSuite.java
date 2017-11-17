@@ -14,11 +14,14 @@ public class ForumUserTestSuite {
 
     @Test
     public void testGetUsername() {
+
         //Given
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.forum");
         ForumUser forumUser = context.getBean(ForumUser.class);
+
         //When
         String username = forumUser.getUsername();
+
         //Then
         Assert.assertEquals("John Smith", username);
 
