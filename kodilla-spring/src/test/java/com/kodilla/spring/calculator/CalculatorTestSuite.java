@@ -14,14 +14,17 @@ public class CalculatorTestSuite {
 
     @Test
     public void testCalculator() {
+
         //Given
         ApplicationContext context =  new AnnotationConfigApplicationContext("com.kodilla.spring");
         Calculator calculator = context.getBean(Calculator.class);
+
         //When
         double resultAAddB = calculator.add(1,2);
         double resultASubB = calculator.sub(3,0.5);
         double resultAMulB = calculator.mul(2, 0.5);
         double resultADivB = calculator.div(2,2);
+
         //Then
         Assert.assertEquals(3, resultAAddB,0.001);
         Assert.assertEquals(2.5, resultASubB, 0.001);

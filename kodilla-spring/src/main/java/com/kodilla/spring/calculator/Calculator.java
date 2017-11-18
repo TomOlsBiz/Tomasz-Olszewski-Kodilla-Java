@@ -9,6 +9,7 @@ public class Calculator {
     @Autowired
     private Display display;
 
+
     public double add(double a, double b) {
         display.displayValue(a + b);
         return a + b;
