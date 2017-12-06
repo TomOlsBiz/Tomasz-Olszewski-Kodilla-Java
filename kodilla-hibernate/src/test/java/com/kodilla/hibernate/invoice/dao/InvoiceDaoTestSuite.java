@@ -72,6 +72,8 @@ public class InvoiceDaoTestSuite {
 
         //Then
         Assert.assertNotEquals(0, invoice);
+        Assert.assertEquals(3, invoiceDao.findById(invoice.getId()).getItems().size());
+        Assert.assertEquals(invoice.getId(), invoiceDao.findById(invoice.getId()).getId());
 
         //CleanUp
         try {

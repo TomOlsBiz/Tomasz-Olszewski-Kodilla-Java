@@ -10,7 +10,7 @@ import java.util.List;
 public class Product {
 
     private int id;
-    String name;
+    private String name;
     private List<Item> item = new ArrayList<>();
 
     public Product() {
@@ -38,7 +38,7 @@ public class Product {
             targetEntity = Item.class,
             mappedBy = "product",
             cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY
+            fetch = FetchType.EAGER
     )
     public List<Item> getItem() {
         return item;

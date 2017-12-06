@@ -39,7 +39,7 @@ public class Invoice {
             targetEntity = Item.class,
             mappedBy = "invoice",
             cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY
+            fetch = FetchType.EAGER
     )
     @Column(name = "ITEM_ID", nullable = false)
     public List<Item> getItems() {
