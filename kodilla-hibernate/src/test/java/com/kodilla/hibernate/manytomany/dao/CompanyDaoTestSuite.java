@@ -88,7 +88,7 @@ public class CompanyDaoTestSuite {
         //Then
         try {
             Assert.assertEquals("Kovalsky", employeeList.get(0).getLastname());
-            Assert.assertEquals(4, employeeList.size());
+            Assert.assertEquals(1, employeeList.size());
 
         } finally {
             //CleanUp
