@@ -14,10 +14,10 @@ import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class FacadeTestSuite {
+public class SearchFacadeTestSuite {
 
     @Autowired
-    Facade facade;
+    SearchFacade searchFacade;
 
     @Autowired
     CompanyDao companyDao;
@@ -31,14 +31,13 @@ public class FacadeTestSuite {
         //Given
         Company testCompanyA = new Company("Holding");
         Company testCompanyB = new Company("Group");
-
-        //When
         companyDao.save(testCompanyA);
         companyDao.save(testCompanyB);
         int testCompanyAId = testCompanyA.getId();
         int testCompanyBId = testCompanyB.getId();
-        List<Company> retrievedCompanies = facade.searchCompanyByPartOfName("ldin");
 
+        //When
+        List<Company> retrievedCompanies = searchFacade.searchCompanyByPartOfName("ldin");
 
         //Then
         Assert.assertEquals(1, retrievedCompanies.size());
@@ -55,13 +54,13 @@ public class FacadeTestSuite {
         //Given
         Employee testEmployeeA = new Employee("Steve", "Higher");
         Employee testEmployeeB = new Employee("John", "Lower");
-
-        //When
         employeeDao.save(testEmployeeA);
         employeeDao.save(testEmployeeB);
         int testEmployeeAId = testEmployeeA.getId();
         int testEmployeeBId = testEmployeeB.getId();
-        List<Employee> retrievedEmployees = facade.searchEmployeeByPartOfLastName("ghe");
+
+        //When
+        List<Employee> retrievedEmployees = searchFacade.searchEmployeeByPartOfLastName("ghe");
 
         //Then
         Assert.assertEquals(1, retrievedEmployees.size());
